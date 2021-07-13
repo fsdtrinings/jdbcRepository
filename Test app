@@ -1,0 +1,32 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DBTestApp {
+	
+	String host = "localhost:3306";
+    String database = "mkj";
+    String url = "jdbc:mysql://"+ host+"/"+database;
+
+    Connection con;
+    PreparedStatement ps;
+   
+    public DBTestApp() throws SQLException, ClassNotFoundException
+    {
+    	Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection(url,"root","root");
+        System.out.println("con "+con);
+       
+    }
+
+    public static void main(String[] args) {
+		try {
+			new DBTestApp();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
