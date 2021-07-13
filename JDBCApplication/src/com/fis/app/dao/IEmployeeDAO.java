@@ -10,6 +10,6 @@ public interface IEmployeeDAO {
 	
 	public boolean addEmployee(Employee e)throws Exception;
 	public List<Employee>  getAllEmployees()throws Exception;
-	public Employee getEmployeeBasedOnID(int id)throws SQLException,EmployeeNotFoundException;
+	public Employee getEmployeeBasedOnID(int id)throws Exception,SQLException,EmployeeNotFoundException;
 	public boolean deleteEmployee(int id)throws SQLException,EmployeeNotFoundException;
 }
